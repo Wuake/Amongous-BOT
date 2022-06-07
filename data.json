@@ -1,0 +1,8 @@
+{
+    "short_tasks": ["Nourrir les poules", "Mesurer l'air", "Vérifier le courrier", "Allumer/Éteindre la télé","Allumer/Éteindre la radio", "Arroser les choux", "Comprendre la vie (regarder un arbre pendant 10sec)"],
+
+    "long_tasks": ["Tailler la haie", "Réparer la 106", "Sortir/Rentrer la poubelle", "Nettoyer les vitres", "Nettoyer la 'vent' (porte intérieur)", "Nettoyer la 'vent' (porte extérieur)", "Planter un chou", "Faire la vaisselle", "Résoudre un calcul", "Chanter dans la chambre de Yves", "Trouver l'objet", "Cacher l'objet"],
+
+    "rules": ["Ne pas courir en intérieur", "Ne pas crier lors de la mort ou pour interpeller ", "Ne pas parler tant que le meeting n'a pas officiellement commencé", "Jouer RP on est là pour kiffer 😘"]
+
+}
