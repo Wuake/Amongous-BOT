@@ -12,7 +12,8 @@ module.exports = client => {
             const members = role.members // array of GuildMembers
             const cles = members.keys() //get the ids of the users
     
-            message.channel.send(nameList)
+            console.log(cles)
+
             for (const key of cles) {
                 console.log(key);
             }
