@@ -18,9 +18,9 @@ module.exports = client => {
             const clefs = members.keys() //get the ids of the users
             const values = members.values()
             
-            /*for (const key of values) {
-                console.log(key.id, key.nickname);
-            }*/
+            for (let i = 0 ; i < data.rules.length ; i++) {
+                text += ("- " + data.rules[i] + "\n" );
+            }
 
             for (let key of values) {
                 //console.log(key._roles, key.id,  key.nickname);
@@ -28,17 +28,19 @@ module.exports = client => {
                     
                     if(key._roles[i] === "984864019821232150"){
                         await client.users.fetch(key.id, false).then((user) => {
-                            user.send('salut');
+                            user.send({
+                                embeds : [{
+                                    title : '📋 Règles',
+                                    description : text
+                                }]
+                            })
                         });
-                        console.log("saloute")
+                        console.log("j'ai envoyé")
                     }
                 }
 
             }
 
-            for (let i = 0 ; i < data.rules.length ; i++) {
-                text += ("- " + data.rules[i] + "\n" );
-            }
             for (let member in members){
                 
                 message.member.send({
