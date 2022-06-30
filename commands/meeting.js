@@ -20,7 +20,7 @@ module.exports = client => {
                     
                     if(key._roles[i] === "984864019821232150"){
                         await client.users.fetch(key.id, false).then((user) => {
-                            user.send({files: ["https://m.media-amazon.com/images/M/MV5BMTkyNDQ3NzAxM15BMl5BanBnXkFtZTgwODIwMTQ0NTE@._V1_UY1200_CR84,0,630,1200_AL_.jpg"]})
+                            user.send({files: ["./images/discuss.png"]})
                         });
                         console.log("j'ai envoyé l'image")
                     }
