@@ -7,6 +7,8 @@ const give = require('./commands/give-role.js')
 const ungive = require('./commands/ungive-role.js')
 const giveRole = require('./commands/give-role.js')
 const startGame = require('./commands/startGame')
+const removeRole = require('./commands/ungive-role')
+const meeting = require('./commands/meeting.js')
 //Discord Client (bot)
 //adding intents since discordjs v13
 const client = new Client({
@@ -24,7 +26,9 @@ client.on('ready', () => {
     //to call a function : file.function(parameters)
     getPeople(client)
     giveRole(client)
+    removeRole(client)
     startGame(client)
+    meeting(client)
 })
 
 client.login(config.token)

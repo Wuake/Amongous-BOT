@@ -11,11 +11,9 @@ module.exports = client => {
         try{
 
             await message.guild.members.fetch()//cache everyone
-            //const role = 984864019821232150 //check every people with the eveyone role
-            //const role = message.mentions.roles.first(); //the role mentionned
             const role = message.guild.roles.everyone //check every people with the eveyone role
             const members = role.members // array of GuildMembers
-            const clefs = members.keys() //get the ids of the users
+            //const clefs = members.keys() //get the ids of the users
             const values = members.values()
             
             for (let i = 0 ; i < data.rules.length ; i++) {
