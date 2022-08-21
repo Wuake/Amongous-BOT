@@ -22,7 +22,7 @@ module.exports = client => {
                         await client.users.fetch(key.id, false).then((user) => {
                             user.send({files: ["./images/discuss.png"]})
                         });
-                        console.log("j'ai envoyé l'image")
+                        console.log("J'ai envoyé l'image")
                     }
                 }
 

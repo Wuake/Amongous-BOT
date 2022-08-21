@@ -6,7 +6,13 @@ module.exports = client => {
 
     command(client, 'startGame', async (message) =>{
 
+        const AMONGOUS_ROLE_ID = '984864019821232150'
+        const fs = require('fs')
         let text = ""
+        var dictionnary = {
+
+            players: []
+        }
 
         try{
 
@@ -14,7 +20,7 @@ module.exports = client => {
             const role = message.guild.roles.everyone //check every people with the eveyone role
             const members = role.members // array of GuildMembers
             //const clefs = members.keys() //get the ids of the users
-            const values = members.values()
+            const values = members.values()// values of a person
             
             for (let i = 0 ; i < data.rules.length ; i++) {
                 text += ("- " + data.rules[i] + "\n" );
@@ -24,7 +30,19 @@ module.exports = client => {
                 //console.log(key._roles, key.id,  key.nickname);
                 for (let i = 0 ; i < key._roles.length ; i++){
                     
-                    if(key._roles[i] === "984864019821232150"){
+                    //if the person has the role
+                    if(key._roles[i] === AMONGOUS_ROLE_ID){
+
+                        console.log(key.id)
+                        
+                        let objectToSend = {
+                            "id": key.id,
+                            "pseudo": key.nickname,
+                            "vote_against_him_her": 0,
+                            "voted": false
+                        }
+                        dictionnary.players.push(objectToSend)
+                        
                         await client.users.fetch(key.id, false).then((user) => {
                             user.send({
                                 embeds : [{
@@ -33,11 +51,24 @@ module.exports = client => {
                                 }]
                             })
                         });
-                        console.log("j'ai envoyé")
+
+                        
+                        console.log("J'ai envoyé les règles")
                     }
                 }
-
+                
             }
+            //formatting to for the json
+            dictionnary = JSON.stringify(dictionnary)
+            //adding the players to the json file
+            fs.writeFile('./players.json', dictionnary, (err) => {
+
+                if(!err){
+                    console.log("J'ai écrit un nom dans le fichier")
+                }else{
+                    console.log(err)
+                }
+            });
 
             for (let member in members){
                 
@@ -48,8 +79,6 @@ module.exports = client => {
                     }]
                 })
             }
-
-
 
         }catch (err){
             console.log(err)
