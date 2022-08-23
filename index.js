@@ -3,12 +3,11 @@ const {Client, Intents} = require('discord.js')
 const config = require('./config.json')
 const {command} = require('./commands/command.js')
 const getPeople = require('./commands/get-people')
-const give = require('./commands/give-role.js')
-const ungive = require('./commands/ungive-role.js')
 const giveRole = require('./commands/give-role.js')
 const startGame = require('./commands/startGame')
 const removeRole = require('./commands/ungive-role')
 const meeting = require('./commands/meeting.js')
+const vote = require('./commands/vote.js')
 //Discord Client (bot)
 //adding intents since discordjs v13
 const client = new Client({
@@ -29,6 +28,7 @@ client.on('ready', () => {
     removeRole(client)
     startGame(client)
     meeting(client)
+    vote(client)
 })
 
 client.login(config.token)

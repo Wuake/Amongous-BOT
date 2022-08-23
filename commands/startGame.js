@@ -52,7 +52,6 @@ module.exports = client => {
                             })
                         });
 
-                        
                         console.log("J'ai envoyé les règles")
                     }
                 }
@@ -64,7 +63,7 @@ module.exports = client => {
             fs.writeFile('./players.json', dictionnary, (err) => {
 
                 if(!err){
-                    console.log("J'ai écrit un nom dans le fichier")
+                    console.log("J'ai écrit le fichier des joueurs")
                 }else{
                     console.log(err)
                 }
