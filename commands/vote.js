@@ -12,12 +12,10 @@ module.exports = client => {
         const members = role.members // array of GuildMembers
         const values = members.values()// values of a person
         const json = '../players.json'
-        const data = require(json)
         const fs = require('fs')
         const AMONGOUS_ROLE_ID = '984864019821232150'
         let content = JSON.parse(fs.readFileSync('./players.json', 'utf8'));
         var count = 1
-        var id = null
 
         //to get the size of the number of person on json file
         for (let key of values) {
@@ -37,17 +35,23 @@ module.exports = client => {
 
 
         //going through all the ppl's id
-        for (let i = 0 ; i < count ; i++){        
+        function vote(){
 
-            if (member == data.players[i].id){
-
-                console.log("à voté")
-                content.players[i].vote_against_him_her += 1
-                fs.writeFileSync('./players.json', JSON.stringify(content));
+            for (let i = 0 ; i < count ; i++){        
+                console.log(content.players[i].id)
+    
+                if (member == content.players[i].id){
+    
+                    console.log("à voté")
+                    content.players[i].vote_against_him_her += 1
+                    fs.writeFileSync('./players.json', JSON.stringify(content));
+                }
+                
             }
             
         }
-        
+
+        vote()//tu sers a rien toi
 
 
         

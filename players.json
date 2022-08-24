@@ -1,1 +1,1 @@
-{"players":[{"id":"351105551142223872","pseudo":"Le Fisc","vote_against_him_her":1,"voted":false},{"id":"458926476822052875","pseudo":"L'huissier","vote_against_him_her":2,"voted":false}]}
+{"players":[{"id":"351105551142223872","pseudo":"Le Fisc","vote_against_him_her":2,"voted":false,"ejected":true},{"id":"458926476822052875","pseudo":"L'huissier","vote_against_him_her":1,"voted":false,"ejected":false}]}

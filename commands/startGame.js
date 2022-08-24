@@ -39,7 +39,8 @@ module.exports = client => {
                             "id": key.id,
                             "pseudo": key.nickname,
                             "vote_against_him_her": 0,
-                            "voted": false
+                            "voted": false,
+                            "ejected": false
                         }
                         dictionnary.players.push(objectToSend)
                         
