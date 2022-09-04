@@ -3,7 +3,7 @@
 
     "long_tasks": ["Tailler la haie", "Réparer la 106", "Sortir/Rentrer la poubelle", "Nettoyer les vitres", "Nettoyer la 'vent' (porte intérieur)", "Nettoyer la 'vent' (porte extérieur)", "Planter un chou", "Faire la vaisselle", "Résoudre un calcul", "Chanter dans la chambre de Yves", "Trouver l'objet", "Cacher l'objet"],
 
-    "rules": ["Éviter de se packer et de traîner ensemble", "Interdiction de tuer dans les vents", "Ne pas rester plus de la moitié du groupe total", "Ne pas courir en intérieur", "Ne pas crier lors de la mort ou pour interpeller ", "Ne pas parler tant que le meeting n'a pas officiellement commencé", "Jouer RP on est là pour kiffer 😘"],
+    "rules": ["Si vous ne votez pas, ça compte comme un 'skip'", "Éviter de se packer et de traîner ensemble", "Interdiction de tuer dans les vents", "Ne pas rester plus de la moitié du groupe total", "Ne pas courir en intérieur", "Ne pas crier lors de la mort ou pour interpeller ", "Ne pas parler tant que le meeting n'a pas officiellement commencé", "Jouer RP on est là pour kiffer 😘"],
 
     "common_task" : ["Faire un Bottle Flip", "Se détendre sur le canapé (5sec ou 10sec)"]
 

@@ -18,6 +18,7 @@ module.exports = client => {
         //const clefs = members.keys() //get the ids of the users
         const values = members.values()
         var count = 1
+        var votes = 0
 
         try {
 
@@ -31,11 +32,12 @@ module.exports = client => {
                                 files: ["./images/discuss.png"]
                             })
                         });
-                        console.log("Le meeting à commencé")
                     }
                 }
-
+                
             }
+            console.log("Le meeting à commencé")
+            message.channel.send("Vous avez 2min 30sec pour débatre")
 
             //function to eject the person who has the more votes against him or her
             function eject() {
@@ -62,18 +64,31 @@ module.exports = client => {
                         max = content.players[i].vote_against_him_her
                         pseudo = content.players[i].pseudo
                         location = i
-                        console.log("éjection de => "+pseudo)
+                        //POUR LE SKIP
+                        votes += content.players[i].vote_against_him_her
                     }
-                    content.players[location].ejected = true
-                    fs.writeFileSync('./players.json', JSON.stringify(content));
-
-                    message.channel.send(`${pseudo} a été éjecté(e)`)
-
-
+                    if(max != 0){
+                        console.log(`éjection de => "${pseudo}"`)
+                        content.players[location].ejected = true
+                        fs.writeFileSync('./players.json', JSON.stringify(content));
+    
+                        message.channel.send(`${pseudo} a été éjecté(e)`)
+                    }else{
+                        message.channel.send('Personne n\'a été éjecté(e)')
+                    }
                 }
+
+
             }
 
-            setTimeout(function(){eject()}, 3000)
+            function warning(){
+
+                message.channel.send("Il vous reste 20 secondes pour voter...")
+            }
+            //envoi d'un warning pour dire le temps restant avant de passer à l'ejection
+            setTimeout(function(){warning()}, 130000)
+            setTimeout(function(){eject()}, 150000)
+
         } catch (err) {
 
             console.log(err)

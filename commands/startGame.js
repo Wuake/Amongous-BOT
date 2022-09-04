@@ -36,10 +36,10 @@ module.exports = client => {
                         console.log(key.id)
                         
                         let objectToSend = {
-                            "id": key.id,
+                            "identity": key.id,
                             "pseudo": key.nickname,
                             "vote_against_him_her": 0,
-                            "voted": false,
+                            "has_voted": false,
                             "ejected": false
                         }
                         dictionnary.players.push(objectToSend)
@@ -53,11 +53,11 @@ module.exports = client => {
                             })
                         });
 
-                        console.log("J'ai envoyé les règles")
                     }
                 }
                 
             }
+            console.log("J'ai envoyé les règles")
             //formatting to for the json
             dictionnary = JSON.stringify(dictionnary)
             //adding the players to the json file
